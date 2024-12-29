@@ -1,3 +1,11 @@
+##A dataset of 200 news audio files was collected from Reuters News and DW News’ Youtube channel on which speech-to-text conversion was performed using SpeechRecognition library to obtain textual transcripts. 
+These obtained textual files were then punctuated in order to define  sentence boundaries by using PunctuationModel from deepmultilingualpunctuation library.##
+
+
+##This is the code to add punctuations to the text files##
+
+
+
 from deepmultilingualpunctuation import PunctuationModel
 import os
 
