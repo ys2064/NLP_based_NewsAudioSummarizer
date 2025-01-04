@@ -4,3 +4,5 @@ This project uses advanced NLP techniques to automatically summarize news audio 
 Dataset: Dataset is created by converting approximately 200 Reuters News and DW news mp4 files into text using the Automatic Speech Recognition system(SpeechRecognition library).
 
 Ground Truth summaries(aka Golden Reference Summaries) : The ground truth summaries for the entire dataset was created using LLM (DeepAi).
+
+DataPreprocessing: Sentence Tokenization, Word Tokenization, Removing Stopwords, Word Cloud Generation, Lemmatization, POS (Part-of-Speech) Tagging
