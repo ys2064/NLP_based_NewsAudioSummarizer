@@ -1,0 +1,26 @@
+##A dataset of 200 news audio files was collected from Reuters News and DW News’ Youtube channel on which speech-to-text conversion was performed using SpeechRecognition library to obtain textual transcripts. 
+These obtained textual files were then punctuated in order to define  sentence boundaries by using PunctuationModel from deepmultilingualpunctuation library.##
+
+
+##This is the code to add punctuations to the text files##
+
+
+
+from deepmultilingualpunctuation import PunctuationModel
+import os
+
+input_folder = '/content/drive/MyDrive/entire_dataset/' 
+save_at_folder = '/content/drive/MyDrive/entire_dataset punctuation/'  
+
+os.makedirs(save_at_folder, exist_ok=True)
+model = PunctuationModel()
+for filename in os.listdir(input_folder):
+    if filename.endswith('.txt'): 
+        input_file_path = os.path.join(input_folder, filename)
+        with open(input_file_path, 'r') as file:
+            transcription_text = file.read()
+        punctuated_text = model.restore_punctuation(transcription_text)
+        output_file_path = os.path.join(save_at_folder, filename)
+        with open(output_file_path, 'w') as output_file:
+            output_file.write(punctuated_text)
+        print(f"Processed and saved: {filename}")
